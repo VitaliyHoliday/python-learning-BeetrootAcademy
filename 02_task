@@ -1,0 +1,6 @@
+# task_02
+#print O
+print('#'*9 + '\n' + '#\t\t#\n'*3 + '#'*9)
+print("\n")
+#print H
+print('#\t\t#\n'*2 + '#'*9 + '\n' + '#\t\t#\n'*2)
