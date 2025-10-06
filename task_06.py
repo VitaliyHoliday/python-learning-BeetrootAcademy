@@ -40,10 +40,10 @@ idx = 0
 while idx < len(hundred):
     number_h = hundred[idx]
 
-    if number_h % 7 == 0 and number_h % 5 != 0:
-        # if elem1 % 5 != 0:
+    if number_h % 7 == 0 and number_h % 5 != 0:        
         numbers4.append(number_h)
 
     idx += 1
+
 
 print('Список %7 !=/5 > ', numbers4)
