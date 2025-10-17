@@ -1,0 +1,42 @@
+import os
+
+
+# підраховуємо кількість рядків через [\n]]
+def count_lines(cont):
+    # на початок файлу
+    cont.seek(0)
+    # считуємо файл
+    text = cont.read()
+    return text.count("\n") + 1 if cont else 0
+
+
+def count_chars(cont):
+    # на початок файлу
+    cont.seek(0)
+    # Підраховує кількість символів у файлі
+    text = len(cont.read())
+    return text
+
+
+def test(name):
+    # Отримуємо шлях до поточного файлу
+    current_dir = os.path.dirname(__file__)
+    file_path = os.path.join(current_dir, name)
+    if os.path.exists(file_path):
+        print("Файл знайдено!")
+        with open(file_path, "r", encoding="utf-8") as cont_file:
+            lines = count_lines(cont_file)
+            chars = count_chars(cont_file)
+            print(f"Файл: {name}")
+            print("Кількість рядків у файлі:", lines)
+            print("Кількість символів у файлі:", chars)
+    else:
+        print("Файл не знайдено.")
+
+
+# test("weekdays.txt")
+print("-------------------------------------------")
+
+# Якщо модуль запускається як головний
+if __name__ == "__main__":
+    test("mymod.py")
